@@ -1,0 +1,18 @@
+[submodule "src/matrixio-kernel-modules"]
+	path = src/matrixio-kernel-modules
+	url = https://github.com/qnlbnsl/matrixio-kernel-modules
+[submodule "src/matrix-creator-openocd"]
+	path = src/matrix-creator-openocd
+	url = https://github.com/qnlbnsl/matrix-creator-openocd
+[submodule "src/matrix-creator-init"]
+	path = src/matrix-creator-init
+	url = https://github.com/qnlbnsl/matrix-creator-init
+[submodule "src/matrix-creator-hal"]
+	path = src/matrix-creator-hal
+	url = https://github.com/qnlbnsl/matrix-creator-hal
+[submodule "src/xc3sprog"]
+	path = src/xc3sprog
+	url = https://github.com/qnlbnsl/xc3sprog
+[submodule "src/matrix-lite-py"]
+	path = src/matrix-lite-py
+	url = https://github.com/qnlbnsl/matrix-lite-py
