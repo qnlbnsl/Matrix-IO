@@ -19,6 +19,7 @@ mv ../matrixio-xc3sprog* "$PWD"/build/xc3sprog/
 # Matrix OpenOCD
 echo "Building matrix-creator-openocd..."
 cd "$PWD"/src/matrix-creator-openocd || exit
+./bootstrap && ./configure
 debuild -us -uc -b
 echo "matrix-creator-openocd built"
 mv ../matrix-creator-* "$PWD"/build/matrix-creator-openocd/
@@ -26,7 +27,6 @@ mv ../matrix-creator-* "$PWD"/build/matrix-creator-openocd/
 # Matrix Creator Init
 echo "Building matrix-creator-init..."
 cd "$PWD"/src/matrix-creator-init || exit
-./bootstrap && ./configure
 debuild -us -uc -b
 echo "matrix-creator-init built"
 mv ../matrix-creator-* "$PWD"/build/matrix-creator-init/

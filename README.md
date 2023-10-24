@@ -29,5 +29,3 @@ raspberrypi-kernel
 
 wiringpi,
 libreadline6
-
-
