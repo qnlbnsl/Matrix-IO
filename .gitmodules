@@ -16,3 +16,6 @@
 [submodule "src/matrix-lite-py"]
 	path = src/matrix-lite-py
 	url = https://github.com/qnlbnsl/matrix-lite-py
+[submodule "src/matrixio-zwave-utils"]
+	path = src/matrixio-zwave-utils
+	url = git@github.com:qnlbnsl/matrixio-zwave-utils.git
