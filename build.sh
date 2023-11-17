@@ -44,5 +44,3 @@ cd "$PWD"/src/matrixio-kernel-modules || exit
 debuild -us -uc -b
 echo "matrixio-kernel-modules built"
 mv ../matrixio-kernel-* "$PWD"/build/matrixio-kernel-modules/
-
-# Matrix Lite Py
