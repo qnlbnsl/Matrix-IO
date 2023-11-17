@@ -17,14 +17,31 @@ if [ "$ARCH" != "arm64" ] && [ "$ARCH" != "armhf" ]; then
     exit 1
 fi
 
-# Function to install .deb packages from a directory
 install_packages() {
+    local standard_packages=()
+    local dev_packages=()
+
+    # Sort packages into standard and dev arrays
     for package in "$1"/*.deb; do
+        if [[ $package == *"dev"* ]]; then
+            dev_packages+=("$package")
+        else
+            standard_packages+=("$package")
+        fi
+    done
+
+    # Install standard packages
+    for package in "${standard_packages[@]}"; do
         echo "Installing $package..."
-        sudo dpkg -i "$package" || sudo apt-get install -f
+        sudo apt-get install -f "$package"
+    done
+
+    # Install dev packages
+    for package in "${dev_packages[@]}"; do
+        echo "Installing $package..."
+        sudo apt-get install -f "$package"
     done
 }
-
 # Install dependencies
 echo "Installing dependencies..."
 install_packages "$DIR/deps/$ARCH"
