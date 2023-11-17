@@ -29,3 +29,19 @@ raspberrypi-kernel
 
 wiringpi,
 libreadline6
+
+## Initialization
+
+```bash
+git clone --recursive -j8  git@github.com:qnlbnsl/Matrix-IO.git
+```
+
+If you already cloned the repository then you can update the submodules with:
+
+```bash
+git submodule update --init
+```
+
+## Build
+
+```bash
