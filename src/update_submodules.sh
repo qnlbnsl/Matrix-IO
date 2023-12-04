@@ -6,12 +6,12 @@ echo "downlaoding source code"
 echo "updating submodules"
 
 dirs=(
-  "matrix-creator-hal",
-  "matrix-creator-init",
-  "matrix-creator-openocd",
-  "matrix-lite-py",
-  "matrixio-kernel-modules",
-  "matrixio-zwave-utils",
+  "matrix-creator-hal"
+  "matrix-creator-init"
+  "matrix-creator-openocd"
+  "matrix-lite-py"
+  "matrixio-kernel-modules"
+  "matrixio-zwave-utils"
   "xc3sprog"
 )
 
