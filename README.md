@@ -16,7 +16,7 @@ If you just want to get started quickly then you can use the [install.sh](instal
 
 ## Quick Start
 
-Ensure you have a clean install of bookworm or buster on your Raspberry Pi. Then run the following commands:
+Ensure you have a clean install of bookworm on your Raspberry Pi. Then run the following commands:
 
 ```bash
 git clone https://github.com/qnlbnsl/Matrix-IO.git
