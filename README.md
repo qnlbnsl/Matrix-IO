@@ -14,6 +14,12 @@ This repository contains the following submodules:
 
 If you just want to get started quickly then you can use the [install.sh](install.sh) script to install all the dependencies and packages.
 
+TODO:
+
+1. Replace requirement for matrixio-creator-openocd with regular openocd
+2. Create build pipeline with github actions and release binaries
+3. Setup a public repository for the debian packages
+
 ## Quick Start
 
 Ensure you have a clean install of bookworm on your Raspberry Pi. Then run the following commands:
