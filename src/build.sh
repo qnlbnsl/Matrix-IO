@@ -1,46 +1,54 @@
 #!/bin/bash
 
 echo "starting builds"
-PWD=$(pwd)
+current_dir=$(pwd)
 
-# Building JimTCL
-echo "Building JimTCL..."
-cd "$PWD"/src/jimtcl || exit
-./configure
-make
+# Building JimTCL | Required for openocd | DEPRECATED
+# echo "Building JimTCL..."
+# cd "$current_dir"/jimtcl || exit
+# ./configure
+# make
+function clean($path) {
+    rm $path/*.buildinfo
+    rm $path/*.changes
+    rm $path/*.build
+}
+function move_files($slug) {
 
+}
 # XC3SPORG
 echo "Building xc3sprog..."
-cd "$PWD"/src/xc3sprog || exit
+cd "$current_dir"/xc3sprog || exit
 debuild -us -uc -b
 echo "xc3sprog built"
-mv ../matrixio-xc3sprog* "$PWD"/build/xc3sprog/
+mv matrixio-xc3sprog* "$current_dir"/../../build/xc3sprog/
+
 
 # Matrix OpenOCD
-echo "Building matrix-creator-openocd..."
-cd "$PWD"/src/matrix-creator-openocd || exit
-./bootstrap && ./configure
-debuild -us -uc -b
-echo "matrix-creator-openocd built"
-mv ../matrix-creator-* "$PWD"/build/matrix-creator-openocd/
+# echo "Building matrix-creator-openocd..."
+# cd "$current_dir"/matrix-creator-openocd || exit
+# ./bootstrap && ./configure
+# debuild -us -uc -b
+# echo "matrix-creator-openocd built"
+# mv matrix-creator-* "$current_dir"/../../build/matrix-creator-openocd/
 
 # Matrix Creator Init
 echo "Building matrix-creator-init..."
-cd "$PWD"/src/matrix-creator-init || exit
+cd "$current_dir"/matrix-creator-init || exit
 debuild -us -uc -b
 echo "matrix-creator-init built"
-mv ../matrix-creator-* "$PWD"/build/matrix-creator-init/
+mv matrix-creator-* "$current_dir"/../../build/matrix-creator-init/
 
 # Matrix Creator HAL
 echo "Building matrix-creator-hal..."
-cd "$PWD"/src/matrix-creator-hal || exit
+cd "$current_dir"/matrix-creator-hal || exit
 debuild -us -uc -b
 echo "matrix-creator-hal built"
-mv ../matrix-creator-* "$PWD"/build/matrix-creator-hal/
+mv matrix-creator-* "$current_dir"/../../build/matrix-creator-hal/
 
 # Matrix Creator Kernel Modules
 echo "Building matrixio-kernel-modules..."
-cd "$PWD"/src/matrixio-kernel-modules || exit
+cd "$current_dir"/matrixio-kernel-modules || exit
 debuild -us -uc -b
 echo "matrixio-kernel-modules built"
-mv ../matrixio-kernel-* "$PWD"/build/matrixio-kernel-modules/
+mv matrixio-kernel-* "$current_dir"/../../build/matrixio-kernel-modules/
