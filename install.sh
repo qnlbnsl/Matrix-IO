@@ -25,9 +25,17 @@ install_packages() {
     for package in "$1"/*.deb; do
         if [[ $package == *"dev"* ]]; then
             dev_packages+=("$package")
+        elif [[ $package == *"reedsolo"* ]]; then
+            dep_package+=("$package")
         else
             standard_packages+=("$package")
         fi
+    done
+
+    # Install reedsolo first packages
+    for package in "${dep_package[@]}"; do
+        echo "Installing $package..."
+        sudo apt-get install -f "$package"
     done
 
     # Install standard packages
