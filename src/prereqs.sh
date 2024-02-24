@@ -16,7 +16,7 @@ sudo apt install libc6 \
   libusb-0.1-4
 
 echo "Installing libreadline6 and wiringpi packages manually"
-sudo dpkg -i deps/libreadline6_6.3-8ubuntu4_arm64.deb
-sudo dpkg -i deps/wiringpi-2.61-1-arm64.deb
+# sudo dpkg -i ../deps/arm64/libreadline6_6.3-8ubuntu2_arm64.deb ## BROKEN
+sudo dpkg -i ../deps/arm64/wiringpi-2.61-1-arm64.deb
 echo "Installing kernel headers"
 sudo apt install dkms raspberrypi-kernel-headers raspberrypi-kernel
