@@ -2,6 +2,8 @@
 
 Master repo to manage matrixio modules
 
+For support please join my discord: https://discord.gg/fH4Bkc7X
+
 This repository contains the following submodules:
 
 1. [matrixio-creator-hal](https://github.com/qnlbnsl/matrixio-creator-hal)
