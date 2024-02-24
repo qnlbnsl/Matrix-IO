@@ -52,8 +52,8 @@ echo "Installing packages from build folder..."
 # matrix-creator-hal
 install_packages "$DIR/build/matrix-creator-hal/$ARCH"
 
-# openocd
-install_packages "$DIR/build/matrix-creator-openocd/$ARCH"
+# # openocd
+# install_packages "$DIR/build/matrix-creator-openocd/$ARCH"
 
 # xc3prog
 install_packages "$DIR/build/xc3sprog/$ARCH"
@@ -73,7 +73,7 @@ install_packages() {
         sudo dpkg -i "\$package" || sudo apt-get install -f
     done
 }
-install_packages "$DIR/build/matrixio-kernel-modules/\$1"
+install_packages "$DIR/build/matrixio-kernel-modules/"
 sudo rm /etc/cron.d/install_matrix_kernel_modules # Remove the cron job after execution
 EOF
 
