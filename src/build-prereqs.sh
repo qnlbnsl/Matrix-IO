@@ -29,11 +29,11 @@ sudo apt install \
   dkms \
   dh-dkms
 
-echo "Adding armf architecture and installing libncurses5:armhf"
-sudo dpkg --add-architecture armhf
-sudo apt-get update
-sudo apt-get install libncurses5:armhf
-echo "Installing libreadline6 and wiringpi packages manually"
-sudo dpkg -i libreadline6_6.3-8ubuntu2_armhf.deb
-sudo dpkg -i libreadline6_6.3-8ubuntu2_arm64.deb
-sudo dpkg -i deps/wiringpi-2.61-1-arm64.deb
+# echo "Adding armf architecture and installing libncurses5:armhf"
+# sudo dpkg --add-architecture armhf
+# sudo apt-get update
+# sudo apt-get install libncurses5:armhf
+# echo "Installing libreadline6 and wiringpi packages manually"
+# sudo dpkg -i libreadline6_6.3-8ubuntu2_armhf.deb
+# sudo dpkg -i libreadline6_6.3-8ubuntu2_arm64.deb
+# sudo dpkg -i deps/wiringpi-2.61-1-arm64.deb
