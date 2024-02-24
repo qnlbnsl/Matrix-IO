@@ -55,3 +55,54 @@ If you already cloned the repository then you can update the submodules with:
 ```bash
 git submodule update --init
 ```
+
+## Package Dependencies
+
+Package: matrix-creator-hal
+- Description: Base library to interact with Matric Creator and Matrix Voice
+- Dependencies: wiringpi, libfftw3-dev, libgflags-dev, libc6-dev | libc-dev
+- Build Dependencies: debhelper, 
+- TODO: Update wiring pi based code to whatever latest pi uses.
+---
+Package: matrix-creator-init
+- Description: Set of boot scripts to program Matrix Creator and Matrix Voice. 
+- Dependencies: libmatrixio-creator-hal, openocd, wiringpi, matrixio-xc3sprog, python3-pip, esptool, libc6 (>= 2.34), libgcc-s1 (>= 3.5), libncurses5 (>= 6), libreadline8 (>= 8.0), libstdc++6 (>= 4.4), libtinfo5 (>= 6)
+- Build Dependencies: debhelper
+- TODO: Confirm if wiring pi is actually being used.
+---
+Package: matrix-creator-openocd
+- Description: DEPRECATED
+- Dependencies: N/A
+- Build Dependencies:
+---
+Package: matrixio-kernel-modules
+- Description: Set of kernel modules to enable microphone and other devices.
+- Dependencies: matrixio-creator-init,raspberrypi-kernel-headers,raspberrypi-kernel,dkms,
+- Build Dependencies: debhelper, dkms, device-tree-compiler
+---
+Package: matrixio-zwave-utils
+- Description: Replacement package containing zwave programmer and firmware binary
+- Dependencies: N/A
+---
+Package: XC3PROG
+- Description: Programmer for the SPARTAN FPGA
+- Dependencies: wiringpi
+- Build Dependencies: debhelper, cmake, wiringpi, libftdi-dev
+- TODO: Find the updated source code or utility. Test it. Remove dependency.
+---
+
+## Debug Logs
+
+If you run into issues after installing all packages then please look at the output of the following 
+
+```sh
+sudo systemctl status matrixio-devices-firmware.service
+```
+The service above is what starts the script to program the fpga.
+
+
+To manually check if everything is working as expected runt he following.
+```sh
+cd usr/share/matrixlabs/matrixio-devices
+./matrix-init.bash
+```
