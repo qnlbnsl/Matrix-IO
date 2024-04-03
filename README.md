@@ -2,7 +2,7 @@
 
 Master repo to manage matrixio modules
 
-For support please join my discord: https://discord.gg/fH4Bkc7X
+For support please join my discord: [https://discord.gg/fH4Bkc7X](https://discord.gg/mcDVb7RbPK)
 
 This repository contains the following submodules:
 
